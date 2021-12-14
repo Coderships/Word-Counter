@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playball&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Balsamiq+Sans:wght@700&display=swap" rel="stylesheet">
+    <title>Word Counter</title>
+    <style>
+        body {
+            background-color: black;
+        }
+
+        * {
+            margin: 0px 0px;
+            padding: 0px 0px;
+            box-sizing: border-box;
+        }
+
+        #heading {
+            font-family: 'Playball', cursive, Arial, Helvetica, sans-serif;
+            font-size: 120px;
+            width: 482px;
+            margin: auto;
+            color: aqua;
+        }
+
+        .sub_heading {
+            font-family: 'Anton', sans-serif, Arial, Helvetica, sans-serif;
+            font-size: 60px;
+            width: 437px;
+            margin: auto;
+            color: aqua;
+        }
+
+        .box {
+            border: 8px solid red;
+            margin: auto;
+            padding: 15px;
+            border-radius: 25px;
+            width: 95%;
+        }
+
+        #text1,
+        #text2,
+        #text3 {
+            width: 100%;
+            /* margin-left: 19px;
+            margin-right: 19px; */
+            margin-bottom: 10px;
+            font-size: 40px;
+            padding: 9px;
+            height: 275px;
+            font-family: 'Balsamiq Sans', cursive;
+            resize: none;
+            border-radius: 15px;
+            background-color: rgb(254, 255, 206);
+        }
+
+        #text1,
+        #text2,
+        #text3:focus {
+            outline: none !important;
+        }
+
+        .text1_output {
+            color: rgb(255, 215, 140);
+            font-size: 40px;
+            font-family: 'Balsamiq Sans', cursive;
+            margin-left: 25px;
+            margin-bottom: 9px;
+        }
+        .text2_output{
+            color: rgb(255, 215, 140);
+            font-size: 40px;
+            font-family: 'Balsamiq Sans', cursive;
+            margin-left: 25px;
+            margin-bottom: 9px;
+        }
+
+        /* typing master */
+        #box2 {
+            margin-top: 50px;
+        }
+
+        #get_text,
+        #start,
+        #finish {
+            font-size: 25px;
+            color: black;
+            background-color: aqua;
+            padding: 6px;
+            border: 4px solid rgb(255, 93, 93);
+            border-radius: 10px;
+            font-family: 'Balsamiq Sans', cursive;
+        }
+
+        #start {
+            margin-right: 15px;
+        }
+
+        #btn_div {
+            width: 113px;
+            margin: auto;
+            margin-bottom: 15px;
+        }
+
+        #two_btn_div {
+            width: 182px;
+            margin: auto;
+            margin-bottom: 15px;
+        }
+
+        .sub_sub_heading {
+            font-family: 'Anton', sans-serif, Arial, Helvetica, sans-serif;
+            font-size: 45px;
+            width: 560px;
+            margin: auto;
+            color: aqua;
+        }
+
+        #box2head {
+            font-family: 'Anton', sans-serif, Arial, Helvetica, sans-serif;
+            font-size: 60px;
+            width: 344px;
+            margin: auto;
+            color: aqua;
+        }
+        @media only screen and (max-width:666px){
+            #box2head {
+                font-size: 35px;
+    width: 199px;
+            }
+            .sub_sub_heading {
+                font-size: 19px;
+    width: 226px;
+            }
+            #heading {
+                font-size: 70px;
+    width: 281px;
+        }
+
+        .sub_heading {
+            font-size: 32px;
+    width: 234px;  
+        }
+        .text1_output,.text2_output {
+            font-size: 25px;
+            margin-left: 25px;
+        }
+        }
+    </style>
+    <script>
+        function count_character() {
+            let temp = document.getElementById("text1").value;
+            char_with_space = temp.length;
+            let spaces = 0;
+            for (let i = 0; i < char_with_space; ++i) {
+                if (temp[i] == " ") { ++spaces; }
+            }
+            let c_with_s = document.getElementById("c_with_s");
+            c_with_s.innerHTML = char_with_space;
+            let c_without_s = document.getElementById("c_without_s");
+            c_without_s.innerHTML = char_with_space - spaces;
+        }
+        setInterval(count_character, 100)
+
+        // typing Master
+        function get_rand_text() {
+            data = ["The global warming is speeding up and the 20 warmest years on record have all come since 1995. Furthermore, the last 2010s decade has five warmest years. Due to global warming many species, birds, habitats, trees, and aquatic life are badly hurt. Also, the hot conditions increased the demand for water.Moreover, the environmental agency responded to a 330% increase in incidents relating to drought. Besides, this type of thing won’t happen every year. However, they will occur more often and will be worse. According to scientists estimate by 2040 there won’t be anything except the summer season.Over the last 20 years, the sea level has risen at roughly twice the speed of the preceding 80 years. In addition, the international community has sworn to avoid a rise of more than 2oC in the average global temperature by 2100 in comparison to pre-industrial levels. But many scientists believe that the figures will be higher.", `Dr. APJ Abdul Kalam is not a new name. He served India as the 11th president. He was born on 15 October 1931 in Rameswaram, Tamil Nadu. Because of his works in the field of science and especially missile and rockets, he is also called the Missile Man of India. He was a famous scientist. He worked with organizations like DRDO (Defense Research and Development Organization) and ISRO (Indian Space Research Organization).
+            He was a real gem of India. He proved that with determination and hard work anything can be achieved. He is one of the many leaders in India who has plenty of admirers. He served the nation for only one term and left us for always on 27 July 2015 due to cardiac arrest.`, `India will celebrate its 75th year of Independence on 15th August. Like every year, the tricolour will be unfurled from the Red Fort, Old Delhi by the Prime Minister of India. On this day, the citizens pay respect to all the great leaders who fought bravely for India’s independence in the past. However, this year, just like the year, there will no grand celebrations or social gatherings due to the COVID-19 pandemic.Independence Day is a national holiday, which means that all government offices, post offices, banks, and stores will remain shut. The states and government will webcast their events and celebrations. On this day, students are asked to prepare a speech by their respective teachers. If you are confused about which speech will work wonders and impress the teachers, then we are here to help! We have prepared various samples of the speech which will get you noticed and impress the audience at the same time. Also, don’t forget to read the tips and formats.`, `We all know that Holi is a festival of colours. People enjoy it by using colours and by pouring water with the help of a water gun on each other. We also enjoy it with a variety of cuisines. The most important sweet of this festival is ‘gujiya’. It is the most entertaining and joyful festival of the country.
+            We celebrate this festival with the triumph of good over evil. The main object of this festival is love and compassion with each other. On this auspicious day, we should get rid of all the ill-feelings towards each other and spread happiness.
+            Before the colourful day, we also celebrate Holika Dahan, which is a part of the Holi festival. The reason behind celebrating this festival is a story of a king named Hiranyakashyapu which I will be sharing with you.
+            This king had a son, Prahlad who was highly devoted to god. Prahlad’s devotion made his father angry and his father decided to kill him. He asked his sister, Holika, who was immune to fire, to sit in the fire with Prahlad in her lap.`, `Speech On Newspaper: Newspaper is a powerhouse of information and a necessity for human life. It is a form of printed media that contains information from all the nooks and corners of the world and helps spread awareness. It has gained popularity day by day and is published in all the corners of the world in different languages.
+            Technically, a newspaper is a periodical publication issued on a daily or weekly basis. It contains news, advertisements, feature, and other information issues in the public interest.`]
+
+            let i = Math.floor((Math.random() * 5))
+            console.log(i);
+            document.getElementById("text2").value = data[i];
+            document.getElementById("text2").style.color = 'black';
+            document.getElementById("text3").value = "";
+        }
+
+
+        let start_time;
+        function start_t() {
+            document.getElementById("text3").value = "";
+            let d1 = new Date()
+            start_time = d1.getTime();
+            console.log(start_time);
+            let speed=document.getElementById("speed_writing");
+            let accuracy=document.getElementById("accuracy");
+            speed.innerHTML="";
+            accuracy.innerHTML="";
+        }
+        function finish() {
+            let d2 = new Date()
+            finish_time = d2.getTime();
+            console.log(finish_time);
+            let time_taken = finish_time - start_time;
+            console.log(time_taken);
+            let speed=document.getElementById("speed_writing");
+            let accuracy=document.getElementById("accuracy");
+            speed.innerHTML=`You wrote ${document.getElementById("text3").value.length} characters out of ${document.getElementById("text2").value.length} characters in ${time_taken/1000} seconds.`
+            // to find accuracy
+            let acc = document.getElementById("text3").value.length;
+            let acc2=acc;
+            let sys=document.getElementById("text3").value;
+            let user=document.getElementById("text2").value;
+            for (let i =0 ;i<document.getElementById("text3").value.length;++i){
+                if(user[i]!=sys[i])
+                {--acc}
+            }
+            accuracy.innerHTML=`Accuracy = ${(acc/acc2)*100}%`
+        }
+    </script>
+</head>
+
+<body>
+    <div id="heading">Wordgamer</div>
+    <div class="box">
+        <div class="sub_heading">Character Counter</div>
+        <div>
+            <textarea name="count_text" id="text1"></textarea>
+        </div>
+        <div class="text1_output">Number of characters with space = <span id="c_with_s">0</span></div>
+        <div class="text1_output">Number of characters without space = <span id="c_without_s">0</span></div>
+    </div>
+    <!-- typing master -->
+    <div class="box" id="box2">
+        <div id="box2head">Typing Master</div>
+        <div id="btn_div"><button id="get_text" onclick="get_rand_text()">Get Text</button></div>
+        <div>
+            <textarea name="count_text" id="text2" cols="30" rows="10" disabled></textarea>
+        </div>
+        <div class="sub_sub_heading">Write above text in below box </div>
+        <div>
+            <textarea name="count_text" id="text3" cols="30" rows="10"></textarea>
+        </div>
+        <div class="text2_output"><span id="speed_writing"></span></div>
+        <div class="text2_output"><span id="accuracy"></span></div>
+        <div id="two_btn_div">
+            <button id="start" onclick="start_t()">Start</button>
+            <button id="finish" onclick="finish()">Finish</button>
+        </div>
+    </div> 
+
+</body>
+
+</html>
